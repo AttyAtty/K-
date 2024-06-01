@@ -1,0 +1,28 @@
+# Fdb version 4
+["latex"] 1687095824 "c:/Users/Ateef/OneDrive/デスクトップ/電通/謁見/latex/sample210402_rev4/sample210402_rev4/sample_v4.tex" "out/sample_v4.dvi" "sample_v4" 1687095824 2
+  "c:/Users/Ateef/OneDrive/デスクトップ/電通/謁見/latex/sample210402_rev4/sample210402_rev4/sample_v4.tex" 1687095823 9961 c640a23a42993fa7e3818c9c93d060bb ""
+  "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1686805120 2222 499d61426192c39efd8f410ee1a52b9c ""
+  "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty" 1686805120 4173 82ac04dfb1256038fad068287fbb4fe6 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty" 1686805120 88371 d84032c0f422c3d1e282266c01bef237 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty" 1686805120 4474 b811654f4bf125f11506d13d13647efb ""
+  "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty" 1686805120 2444 0d0c1ee65478277e8015d65b86983da2 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/base/latexsym.sty" 1686805505 2853 55e863529ba74c1de558934b1565f0d1 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1686805360 1224 978390e9c2234eab29404bc21b268d1e ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1686805362 12296 04d6453afafd99986deba3629756d9ec ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty" 1686805358 18387 8f900a490197ebaf93c02ae9476d4b09 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty" 1686805358 8010 a8d949cbdbc5c983593827c9eec252e1 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty" 1686805358 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty" 1686805358 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
+  "c:/texlive/2023/texmf-dist/tex/platex/base/jarticle.cls" 1686805711 25873 fd34d08164a3ea7afd6bc7fe99629a3d ""
+  "c:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1686805094 40967 d940221f8762fd5848760382d97d1226 ""
+  "c:/texlive/2023/texmf-var/web2c/pdftex/latex.fmt" 1686805994 6544188 baf77f440621e780edcabce364af45b5 ""
+  "c:/texlive/2023/texmf.cnf" 1686805897 713 e69b156964470283e0530f5060668171 ""
+  "multirow.sty" 0 -1 0 ""
+  "out/multirow.sty" 0 -1 0 ""
+  "out/sample_v4.aux" 1687058157 34 3985256e7290058c681f74d7a3565a19 "latex"
+  "sample_v4.tex" 1687095823 9961 c640a23a42993fa7e3818c9c93d060bb ""
+  (generated)
+  "out/sample_v4.aux"
+  "out/sample_v4.dvi"
+  "out/sample_v4.log"
+  (rewritten before read)
