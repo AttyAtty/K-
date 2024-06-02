@@ -69,170 +69,220 @@
 
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{目的}
-
-
-\vspace{3mm}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{原理}
-
-\begin{equation}
-T=2\pi \sqrt{\frac{h}{g}\left (1+\frac{2r^2}{5h^2}\right )} \times \left (1+\frac{\theta^2}{16}\right )
-\label{grav_eq}
-\end{equation}
-
-実験の原理では上式で原理を終えるのは良い方法ではありません．なぜなら，あなたが
-求めるべき量は重力加速ですから，式(\ref{grav_eq})を $g$ について解いた
-ものを載せるのが良い方法です．
-%
-\begin{equation}
-g=\frac{4\pi^2 h}{T^2}\times \left (1+\frac{2r^2}{5h^2} +\frac{\theta^2}{8}\right )
-\label{grav2_eq}
-\end{equation}
-
-一行独立に書いている式には必ず式番号を割り振ってください．式のインデントの付け方は
-分野によって幾つか流儀があるようです．物理では式を中央寄せ，数式番号は右寄せに
-して行をそろえるのが一般的です．
-
-\vspace{3mm}
-\TeX では数式にはラベル(\verb|\label{<label>}|)を付けておき，後で参照(\verb|\ref{<label>}|)すると
-式番号を自動的に引用します（後で途中に式を追加してもいちいち付け直す必要はありません）．
-ただし，引用は一度のコンパイルでは解決できない場合があります(??のように式番号が未定に
-なります．メッセージを読むと警告が表示されているはずです）．このようなときは
-もう一度コンパイルをしてください．また，式をコピペしているときに起こりがちですが，ラベルは重複して
-用いることはできません．ペーストした際はラベルを書き換えることを忘れないでください．
-
-数式を書くのは \TeX に慣れるまでは存外面倒なものです．各課題について代表的な数式を
-ここで掲載しておきましょう．どのように数式コマンドを書けばよいかの参考にしてください．
-
-%
-\subsection{重力加速度の測定}
-不確かさを求める式は次のようになります．
-\begin{eqnarray}
-\overline{g}=\cfrac{\cfrac{g_1}{(\Delta g_1)^2}+\cfrac{g_2}{(\Delta g_2)^2}+\cdots+\cfrac{g_n}{(\Delta g_n)^2}}{\cfrac{1}{(\Delta g_1)^2}+\cfrac{1}{(\Delta g_2)^2}+\cdots+\cfrac{1}{(\Delta g_n)^2}} \\
-\label{eq1}
-\Delta g = \cfrac{1}{\sqrt{\cfrac{1}{(\Delta g_1)^2}+\cfrac{1}{(\Delta g_2)^2}+\cdots+\cfrac{1}{(\Delta g_n)^2}}}
-\label{eq2}
-\end{eqnarray}
-
-%
-\subsection{音の共鳴}
-固体中の波の速さ $v_m$ に対する合成標準不確かさを求める式．
-\begin{equation}
-\frac{\Delta v_m}{v_m}=\sqrt{\left (\frac{\Delta L_g}{L_g}\right )^2+\left (\frac{\Delta l_m}{l_m}\right )^2+\left (\frac{\Delta v_g}{v_g}\right )^2}
-\label{eq3}
-\end{equation}
-
-\subsection{液体の比熱}
-加熱法による液体試料の温度上昇と時間の関係を表す式．
-\begin{equation}
-\frac{\Delta T}{\Delta t}=\frac{Ri^2}{MC+mc}
-\label{eq4}
-\end{equation}
-
-\subsection{2次元の等電位線}
-中央に導体がある等電位線の理論式の作図に関する式．
-\begin{equation}
-x=\pm \sqrt{\frac{y(-y^2+cy+R^2)}{y-c}}
-\label{eq5}
-\end{equation}
-
-\subsection{電気回路}
-抵抗，コイル，コンデンサの直列回路による過渡応答の原理式．
-\begin{equation}
-\dderiv{I(t)}{t}+2\gamma \deriv{I(t)}{t}+\omega_0^2I(t)=0
-\label{eq6}
-\end{equation}
-
-ここで用いている\verb|\ddereiv|や\verb|\deriv|はこのファイルの冒頭に定義してあるもので，通常の
-\TeX のコマンドではないことに注意が必要です．
-
-\subsection{ヤング率}
-たわみによるヤング率を求める式．
-\begin{equation}
-E=\frac{g}{2}\frac{l^3 d}{a^3 br}\frac{m}{S-S_0}
-\label{eq7}
-\end{equation}
-
-\subsection{粘性率}
-ポアズイユの法則を表す式．
-\begin{equation}
-p_1-p_2=\left (\rho g\cos\theta -\frac{2\gamma}{al}\right )l
-\label{eq8}
-\end{equation}
-
-\subsection{光のスペクトル}
-Na線の D$_1$線とD$_2$線の波長．
-
-　D$_1$線：589.592 nm　\\
-　
-　${\rm D_2}$線：588.995 $\rm{nm}$
-
-\subsection{エアトラックによる力学実験}
-滑走体のエアトラック上の運動方程式を減速の平均の加速度 $\overline{a}$ と平均速度 $\overline{v}$ で記述した式．
-\begin{equation}
-\frac{\overline{a}}{g}=\mu \cos\theta +\left (\frac{\lambda}{mg}\right )\overline{v}+\left (\frac{\kappa}{mg}\right )\overline{v}^2\mp\sin\theta
-\label{eq9}
-\end{equation}
-
-
-\begin{equation}
-^{137}_{\hspace{1.2mm}55}\rm{Cs} \rightarrow ^{137}_{\hspace{1.2mm}56}\rm{Ba} + \rm{e}^{-} +\overline{\nu}_{\rm{e}}
-\label{beta-colps}
-\end{equation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{方法}
-
-%
-\begin{itemize}
-\setlength{\itemsep}{-2mm}
- \item 測定上特に注意をした点（注意をしなければならなかった点）
- \item 測定装置で特に説明をしなければ何故，どのように測定値を取得したのか
- 	  読者にわからない点
- \item 実験結果を再現するために必要な特別な手順や測定方法など
- \item 測定データを処理する際に利用したソフトウェアで特に記載が必要なもの
-\end{itemize}
+\section{宿題１}
 
 \begin{enumerate}
-\setlength{\itemsep}{-2mm}
- \item 電圧はディジタルマルチメーターを用いて測った
- \item まずディジタルマルチメーターの電源をONにした
- \item 次にメーターのプローブを電源端子に接続し$\cdots$
+	\setlength{\itemsep}{-2mm}
+	 \item 問題文より，ある病気の感染率は0.5％であるから，その周辺確率は0.005で，感染していない確率は感染している場合の補集合より，0.995.よって，病気の感染の有無に関する周辺確率表は以下のようになった．
+	 
+	 \begin{table}[ht]
+		\begin{center}
+		% \caption{タイトル}
+		\label{tab1}
+		\begin{tabular}{lll}\hline
+		感染 & あり & なし\\ \hline
+		周辺確率 & 0.005 & 0.995\\ \hline
+		\end{tabular}
+		\end{center}
+		\end{table}
+
+
+	 \item 問題文より，感染している時に診断結果でも「あり」と診断される確率は0.80より，診断結果で「なし」と判定される確率は0.20．また，感染していない時に「あり」という診断結果が出る確率は0.10であるから，「なし」という診断結果が出るのは0.90.
+	 したがって，患者の感染の有無が判明しているときのそれぞれの診断結果の条件付確率表は以下のようになった．
+	
+	 \begin{table}[ht]
+		\begin{center}
+		\label{tab2}
+		\begin{tabular}{|c|cc|}\hline
+    {} & \multicolumn{2}{c|}{診断結果} \\
+		 & あり & なし \\ \hline
+    感染あり & 0.80 & 0.20 \\
+		感染なし & 0.10 & 0.90 \\ \hline
+		\end{tabular}
+		\end{center}
+		\end{table}
+
+	 \item 「診断結果が感染ありであった」という結果を得た患者が実際に感染している確率は，ベイズの定理から,式\ref*{equ1}のようになった．
+	 
+	 \begin{equation}
+		\label{equ1}
+		\frac{0.80 \times 0.005}{0.80 \times 0.005 \times 0.10 \times 0.095}=\frac{8}{207}\approx  0.0386
+	 \end{equation}
+
+	 上記の式より\fbox{0.0386}が求めたい確率である．
+
+	 \vspace{3mm}
+
+	 \item 診断方法Bの時の，「診断結果が感染ありだった」時に患者が実際の感染している確率は，ベイズの定理より，以下の式\ref*{equ2}のようになった
+	 
+	 \begin{equation}
+		\label{equ2}
+		\begin{split}
+			P(有|あり) &= \frac{P(あり|有)P(有)}{P(あり|有)P(有)+P(あり|無)P(無)} \\
+			&= \frac{0.90 \times 0.005}{0.90 \times 0.005 \times 0.20 \times 0.995} \\
+			&= \frac{9}{407} \approx 0.0221
+		\end{split}
+	 \end{equation}
+	 
+	 したがって，求めたい確率は\fbox{0.0221}である．
+
+	\end{enumerate}
+
+\vspace{3mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{宿題2}
+
+\begin{enumerate}
+	\setlength{\itemsep}{-2mm}
+	 \item (a)累積分布関数$F(x)$を描いたグラフは図\ref*{apara}の通りである．
+	 
+	 \begin{figure}[ht]
+		\begin{center}
+		 \includegraphics[scale=1.0]{zu1.png}
+		 \caption{累積分布関数}
+		 %\ecaption{Options of documentclass.}
+		 \label{apara}
+		\end{center}
+		\end{figure}
+
+				(b)$X$の平均と分散は以下の式\ref*{equ3}と式\ref*{equ4}のように求められた．
+
+	\begin{equation}
+		\label{equ3}
+		\begin{split}
+			E[X] &= \sum_{k = 1}^{3}x_{k} p_{k} = 1 \times \frac{1}{3} + 2 \times \frac{1}{6} + 3 \times \frac{1}{2} = \frac{13}{6}
+		\end{split}
+	\end{equation}
+
+	\begin{equation}
+		\label{equ4}
+		\begin{split}
+			V[X] &= E[X^2]-{E[X]}^2 \\
+					 &= 1^2 \times \frac{1}{3} +2^2 \times \frac{1}{6} +3^2 \times \frac{1}{2} - \frac{13^2}{6^2} \\
+					 &= \frac{1}{3}+\frac{2}{3}+\frac{9}{2}-\frac{169}{36} \\
+					 &= \frac{29}{36}
+		\end{split}
+	\end{equation}
+
+	よって，平均は\fbox{$\frac{13}{6}$}，分散は\fbox{$\frac{29}{36}$}である．
+		\vspace{6mm}
+
+	 \item 確率変数Xが一回に1.5の費用がかかる回収額を表すときのこの投資のリターンの平均と標準偏差は，線形性から，以下の式と式のように求められた．
+
+	 \begin{equation}
+		\label{equ5}
+		E[X-1.5] = E[X] - 1.5 = \frac{13}{6} - \frac{3}{2} = \frac{2}{3}
+	 \end{equation}
+	 
+	 \begin{equation}
+		\label{equ6}
+		\sigma[X-1.5] = \sqrt{V[X-1.5]} = \sqrt{V[X]} = \frac{\sqrt{29}}{6}
+	 \end{equation}
+
+	 したがって，求める平均は\fbox{$\frac{2}{3}$}，標準偏差は\fbox{$\frac{\sqrt{29}}{6}$}である．
+
+	 \vspace{6mm}
+
+	 \item (a)与式の確率変数$X$の確率密度関数$f(x)$の累積分布関数は以下の図\ref*{apara2}のように描けた．
+	 
+	 \begin{figure}[ht]
+		\begin{center}
+		 \includegraphics[scale=1.0]{zu2.png}
+		 \caption{累積分布関数}
+		 %\ecaption{Options of documentclass.}
+		 \label{apara2}
+		\end{center}
+		\end{figure}
+
+		(b)次に$X$の平均と分散は以下の式\ref*{equ7}，式\ref*{equ8}，式\ref*{equ9}のように求められた．
+
+		\begin{equation}
+			\label{equ7}
+			\begin{split}
+				E[X] &= \int_{0}^{1} xf(x) \,dx \\
+						 &= \int_{0}^{\frac{1}{2}} x(4x) \,dx + \int_{\frac{1}{2}}^{1} x(-4x+4) \,dx \\
+						 &= \frac{4}{3}[x^3]_{0}^{\frac{1}{2}}+ [-\frac{4}{3}x^3+2x^2]_{\frac{1}{2}}^{1} \\
+						 &= \frac{1}{6}+\frac{2}{3}-\frac{1}{3} \\
+						 &= \frac{1}{2}
+			\end{split}
+		\end{equation}
+
+		\begin{equation}
+			\label{equ8}
+			\begin{split}
+				E[X^2] &= \int_{0}^{1} x^2 f(x) \,dx \\
+							 &= \int_{0}^{\frac{1}{2}} x^2(4x) \,dx + \int_{\frac{1}{2}}^{1} x^2(-4x+4) \,dx \\
+							 &= [x^4]_{0}^{\frac{1}{2}} + [-x^4+\frac{4}{3}x^3]_{\frac{1}{2}}^{1} \\
+							 &= \frac{1}{16}+\frac{1}{3}-\frac{5}{48} \\
+							 &= \frac{7}{24} \\
+							\end{split}
+		\end{equation}
+
+		\begin{equation}
+			\label{equ9}
+				V[X] = E[X^2]- {E[X]}^2 = \frac{7}{24}-{\frac{1}{2}}^2 =\frac{1}{24} \\
+		\end{equation}
+
+よって，平均は\fbox{$\frac{1}{2}$}，分散は\fbox{$\frac{1}{24}$}である．
+
+	\end{enumerate}
+	\vspace{3mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{宿題3-1}
+与えられた確率表とその期待値$\mu$と分散$\sigma^2$から，任意の実数$a$を用いて，分散$\sigma^2$は以下の式\ref*{equa}のように変形できる．
+
+\begin{equation}
+	\label{equa}
+	\begin{split}
+		\sigma^2 &= E[(X-\mu)^2] \\
+						 &= \sum_{k=1}^{N} (k-\mu)^2 p_k \\
+						 &\geq \sum_{k:(k-\mu)\leq -a} (k-\mu)^2 p_k + \sum_{k:(k-\mu)\geq a} (k-\mu)^2 p_k \\
+						 &\geq \sum_{k:(k-\mu)\leq -a} a^2 p_k + \sum_{k:(k-\mu)\geq a} a^2 p_k \\
+						 &\geq a^2 \left\{  \sum_{k:(k-\mu)\leq -a} p_k + \sum_{k:(k-\mu)\geq a} p_k \right\} \\
+						 &= a^2 P\left((X-\mu)^2\geq a^2\right) 
+	\end{split}
+\end{equation}
+
+よって，式\ref*{equa}の両辺を$a^2$で割って，対称性から$a>0$の任意の実数$a$を考えてあげることによって，以下のチェビチェフの不等式が証明された．
+
+\begin{equation}
+	\label{equa}
+		\frac{\sigma^2}{a^2} = P\left(|X-\mu|\geq a\right)
+\end{equation}
+
+\vspace{3mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{宿題3-2}
+
+\begin{enumerate}
+	\item マルコフの不等式から
+	\begin{equation}
+		P(X\geq800)\leq\frac{400}{800}=\frac{1}{2}
+	\end{equation}
+
+	よって，求める最大の割合は\fbox{$\frac{1}{2}$}である．
+
+	\item マルコフの不等式から
+	\begin{equation}
+		P(X\geq10000)\leq\frac{20}{10000}=\frac{1}{500}
+	\end{equation}
+
+	よって，求める最大の割合は\fbox{$\frac{1}{500}$}である．
+
+	\item チェビチェフの不等式から
+	\begin{equation}
+		P(X-400\geq800-400)\leq P(|X-400|\geq400)\leq\frac{200^2}{400^2}=\frac{1}{4}
+	\end{equation}
+
+	よって，求める最大の割合は\fbox{$\frac{1}{4}$}である．
+
+	\item チェビチェフの不等式から
+	\begin{equation}
+		P(X-400\geq10000-400)\leq P(|X-400|\geq9600)\leq\frac{200^2}{9600^2}=\frac{1}{2304}
+	\end{equation}
+
+	よって，求める最大の割合は\fbox{$\frac{1}{2304}$}である．
 \end{enumerate}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{実験結果}
-
-　実験結果のセクションでは得られた測定値を元にして目的のセクションで掲げた物理量を
-計算し，（存在する場合は）比較できる文献値等と一緒に最後に表にしてまとめます．もちろん，
-不確かさや精度を吟味できる場合，同様のこのセクションで計算を行って求めた値と合わせて示します．
-
-データをまとめる際は必ず表にしてまとめてください．またはデータを
-グラフにプロットして表示することは良いアイディアで，多くの場合傾向が大変分かりやすくなります．
-表やグラフをどのように書くのかについてはeラーニングの課題として与えています．よく習熟して
-ください．表のサンプルは次の表\ref{tab1}のようなものです．
-%
-\begin{table}[ht]
-\begin{center}
-\caption{ooにおける回折角の測定結果}
-\label[tab1]
-\begin{tabular}{lllll}\hline
- & \multicolumn{2}{c}{1次回折光} & \multicolumn{2}{c}{2次回折光} \\
- & D$_1$線 &  D$_2$線 & D$_1$線 & D$_2$線 \\ \hline
-$\theta_{\rm L}$ &  287$^\circ$35' & 287$^\circ$37' & 311$^\circ$37' & 311$^\circ$33' \\
-$\theta_{\rm L}$ &  246$^\circ$9' & 221$^\circ$10' & 221$^\circ$32' & 221$^\circ$33' \\ \hline
-\end{tabular}
-\end{center}
-\end{table}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
@@ -257,3 +307,21 @@ val3 & val4 \\ \hline
 \end{tabular}%
 \end{center}
 \end{table}
+
+%箇条書き
+\begin{itemize}
+	\setlength{\itemsep}{-2mm}
+	 \item 測定上特に注意をした点（注意をしなければならなかった点）
+	 \item 測定装置で特に説明をしなければ何故，どのように測定値を取得したのか
+			 読者にわからない点
+	 \item 実験結果を再現するために必要な特別な手順や測定方法など
+	 \item 測定データを処理する際に利用したソフトウェアで特に記載が必要なもの
+	\end{itemize}
+	
+	%番号振って箇条書き
+	\begin{enumerate}
+	\setlength{\itemsep}{-2mm}
+	 \item 電圧はディジタルマルチメーターを用いて測った
+	 \item まずディジタルマルチメーターの電源をONにした
+	 \item 次にメーターのプローブを電源端子に接続し$\cdots$
+	\end{enumerate}
