@@ -1,0 +1,36 @@
+# Fdb version 4
+["dvipdf"] 1687059627 "out/sample.dvi" "out/sample.pdf" "out/sample" 1687059627 0
+  "out/sample.dvi" 1687059627 3568 6c802bacae2733aa3d10b6a79f2e4d48 "latex"
+  (generated)
+  "out/sample.pdf"
+  (rewritten before read)
+["latex"] 1687059627 "c:/Users/Ateef/OneDrive/デスクトップ/電通/謁見/latex/230301_example_files/sample.tex" "out/sample.dvi" "sample" 1687059627 0
+  "c:/Users/Ateef/OneDrive/デスクトップ/電通/謁見/latex/230301_example_files/sample.tex" 1687059625 2167 e9c0b4688be2913a3366ca6518b355bc ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1686805728 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1686805728 468 53f854284f6afa6c36aaa2d1090ecc12 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1686805728 856 7404843a5f798859944d7973a47821d5 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1686805728 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1686805195 1524 4414a8315f39513458b80dfc63bff03a ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1686805195 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1686805195 1520 eccf95517727cb11801f4f1aee3a21b4 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1686805195 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1686805195 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1686805195 1300 b62933e007d01cfd073f79b963c01526 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1686805195 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1686805195 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1686805195 1124 6c73e740cf17375f03eec0ee63599741 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1686805195 1116 933a60c408fc0a863a92debe84b2d294 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1686805195 1120 8b7d695260f3cff42e636090a8002094 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1686805489 35615 a6d1a4c99e7a18682a65dab9f3f2d901 ""
+  "c:/texlive/2023/texmf-dist/tex/platex/jsclasses/jsarticle.cls" 1686805446 61387 1c16fa09f9aa344f6b7ed4a7e2c399b2 ""
+  "c:/texlive/2023/texmf-dist/tex/platex/jsclasses/jslogo.sty" 1686805446 5585 8e4615c54073c390d14154b29cee89cb ""
+  "c:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1686805094 40967 d940221f8762fd5848760382d97d1226 ""
+  "c:/texlive/2023/texmf-var/web2c/euptex/platex.fmt" 1686805962 6572698 492c3cbc680a9132567deb58125c9a85 ""
+  "c:/texlive/2023/texmf.cnf" 1686805897 713 e69b156964470283e0530f5060668171 ""
+  "out/sample.aux" 1687059627 253 e3f7d89bbb64e70e87e652d8118896ff "latex"
+  "sample.tex" 1687059625 2167 e9c0b4688be2913a3366ca6518b355bc ""
+  (generated)
+  "out/sample.aux"
+  "out/sample.dvi"
+  "out/sample.log"
+  (rewritten before read)
