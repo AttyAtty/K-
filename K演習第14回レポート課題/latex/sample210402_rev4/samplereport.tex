@@ -74,120 +74,356 @@
 
 \begin{enumerate}
 	\setlength{\itemsep}{-2mm}
-	 \item 標本空間 $\Omega = \{\ 0,1,2\cdots\}\ $ \\
-				 母数空間 $\{\lambda|0<\lambda <\infty\}\ $
+	 \item 標本空間は0以上の整数で, $\Omega = \{\ 0,1,2\cdots\}\ $,母数空間は正の実数で,$\{\lambda|0<\lambda <\infty\}\ $である．
+
+  \vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 	 \item ポアソン分布の平均は期待値を求めることで以下の式ように求められた．
 
 	 \begin{equation}
 		\label{equ1}
 		\begin{split}
-		E[X] &= \sum_{k = 0}^{\infty}x_{k} p_{k} = 1 \times \frac{1}{3} + 2 \times \frac{1}{6} + 3 \times \frac{1}{2} = \frac{13}{6}
+		E[X] &= \sum_{x = 0}^{\infty}x\frac{{\lambda}^x e^{-\lambda}}{x!} = \lambda\sum_{x = 1}^{\infty}\frac{{\lambda}^{x-1} e^{-\lambda}}{(x-1)!} = \lambda\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!} = \lambda
 		\end{split}
 	\end{equation}
 
-	 \item 「診断結果が感染ありであった」という結果を得た患者が実際に感染している確率は，ベイズの定理から,のようになった．
-	 
+	以上の式では，$y=x-1$という置換と，$\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!}$がポアソン分布の全確率の和を表していることから$\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!}= 1$であることを利用している．したがって，求める平均値は\fbox{$\lambda$}である．
 
-	 上記の式より\fbox{0.0386}が求めたい確率である．
+	\vspace{6mm}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	 \vspace{3mm}
 
-	 \item 診断方法Bの時の，「診断結果が感染ありだった」時に患者が実際の感染している確率は，ベイズの定理より，以下の式\ref*{equ2}のようになった
+	 \item まず$E[X(X-1)] $を求めると以下のようになった．
 	 
 	 \begin{equation}
 		\label{equ2}
 		\begin{split}
-			P(有|あり) &= \frac{P(あり|有)P(有)}{P(あり|有)P(有)+P(あり|無)P(無)} \\
-			&= \frac{0.90 \times 0.005}{0.90 \times 0.005 \times 0.20 \times 0.995} \\
-			&= \frac{9}{407} \approx 0.0221
+		E[X] &= \sum_{x = 0}^{\infty}x(x-1)\frac{{\lambda}^x e^{-\lambda}}{x!} = {\lambda}^2\sum_{x = 2}^{\infty}\frac{{\lambda}^{x-2} e^{-\lambda}}{(x-2)!} = {\lambda}^2\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!} = {\lambda}^2
 		\end{split}
-	 \end{equation}
-	 
-	 したがって，求めたい確率は\fbox{0.0221}である．
+	\end{equation}
 
-	\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{宿題2-2}
-
-\begin{enumerate}
-	\setlength{\itemsep}{-2mm}
-	 \item (a)累積分布関数$F(x)$を描いたグラフは図\ref*{apara}の通りである．
-	 
-	 \vspace{3mm}
-
-				(b)$X$の平均と分散は以下の式\ref*{equ3}と式\ref*{equ4}のように求められた．
+	以上の式では，$y=x-2$という置換と,2と同様に$\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!}$がポアソン分布の全確率の和を表していることから$\sum_{y = 0}^{\infty}\frac{{\lambda}^y e^{-\lambda}}{y!}= 1$であることを利用している．したがって，求める分散の値は以下のように求められた．
 
 	\begin{equation}
 		\label{equ3}
 		\begin{split}
-			E[X] &= \sum_{k = 1}^{3}x_{k} p_{k} = 1 \times \frac{1}{3} + 2 \times \frac{1}{6} + 3 \times \frac{1}{2} = \frac{13}{6}
+		V[X] = E[X(X-1)] + E[X] +- E[X^2] = {\lambda}^2 + \lambda - {\lambda}^2 = \lambda
 		\end{split}
 	\end{equation}
 
-	\begin{equation}
+よって，求める分散の値は\fbox{${\lambda}^2$}.
+
+	 \vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+	 \item ポアソン分布のモーメント母関数は以下のように求めた．
+	 
+	 \begin{equation}
 		\label{equ4}
 		\begin{split}
-			V[X] &= E[X^2]-{E[X]}^2 \\
-					 &= 1^2 \times \frac{1}{3} +2^2 \times \frac{1}{6} +3^2 \times \frac{1}{2} - \frac{13^2}{6^2} \\
-					 &= \frac{1}{3}+\frac{2}{3}+\frac{9}{2}-\frac{169}{36} \\
-					 &= \frac{29}{36}
+		M(t) = E[e^{tX}] = \sum_{x = 0}^{\infty}e^{tx}\frac{{\lambda}^x e^{-\lambda}}{x!} = \sum_{x = 0}^{\infty}\frac{{(\lambda e^t)}^x e^{-\lambda}}{x!} 
+		\end{split}
+	\end{equation}
+	 
+	ここで，$\sum_{k = 0}^{\infty}\frac{x^k}{k!} = e^x$という性質から，
+
+	\begin{equation}
+		\label{equ5}
+		\begin{split}
+		M(t) = \sum_{x = 0}^{\infty}\frac{{(\lambda e^t)}^x e^{-\lambda}}{x!} = e^{\lambda e^t}e^{-\lambda} = e^{\lambda(e^t-1)}
 		\end{split}
 	\end{equation}
 
-	よって，平均は\fbox{$\frac{13}{6}$}，分散は\fbox{$\frac{29}{36}$}である．
-		\vspace{3mm}
+	 したがって，求めるモーメント母関数は\fbox{$e^{\lambda(e^t-1)}$}である．
 
-	 \item 確率変数Xが一回に1.5の費用がかかる回収額を表すときのこの投資のリターンの平均と標準偏差は，線形性から，以下の式と式のように求められた．
+	 \vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	 \begin{equation}
-		\label{equ5}
-		E[X-1.5] = E[X] - 1.5 = \frac{13}{6} - \frac{3}{2} = \frac{2}{3}
-	 \end{equation}
+
+	 \item  4で求めたモーメント母関数をtで一回微分したものに$t=0$を代入することによって$X$の期待値を得ることができる．まず$M(t)$を一回微分すると，以下のようになる．
 	 
 	 \begin{equation}
 		\label{equ6}
-		\sigma[X-1.5] = \sqrt{V[X-1.5]} = \sqrt{V[X]} = \frac{\sqrt{29}}{6}
-	 \end{equation}
+		\begin{split}
+		M'(t) = \lambda e^t e^{\lambda(e^t-1)}
+		\end{split}
+	\end{equation}
 
-	 したがって，求める平均は\fbox{$\frac{2}{3}$}，標準偏差は\fbox{$\frac{\sqrt{29}}{6}$}である．
+	よって，ここに$t=0$を代入すると，
 
-	 \vspace{3mm}
+	\begin{equation}
+		\label{equ7}
+		\begin{split}
+		E[X] = M'(0) = \lambda e^0 e^{\lambda(e^0-1)} = \lambda \cdot 1 \cdot 1 = \lambda
+		\end{split}
+	\end{equation}
+	
+  と以上のようになり，求める$X$の期待値$E[X]$は\fbox{$\lambda$}である．
 
-	 \item (a)与式の確率変数$X$の確率密度関数$f(x)$の累積分布関数は以下の図\ref*{apara2}のように描けた．
+	次に，$X^2$の期待値は，$M'(t)$をさらに微分して，$t=0$を代入することによって得られる．まず微分をすると，
+
+	\begin{equation}
+		\label{equ8}
+		\begin{split}
+		M''(t) = (\lambda e^{\lambda(e^t-1)+t})' = \lambda(\lambda e^t +1)e^{\lambda(e^t-1)+t}
+		\end{split}
+	\end{equation}
+
+	よって，$t=0$を代入すると，$X^2$の期待値は，
+
+	\begin{equation}
+		\label{equ9}
+		\begin{split}
+		E[X^2] = M''(0) = \lambda(\lambda e^0 +1)e^{\lambda(e^0-1)+0} = \lambda (\lambda \cdot 1 + 1) \cdot 1 = \lambda ^2 + \lambda
+		\end{split}
+	\end{equation}
+
+と以上のようになり，$X^2$の期待値は\fbox{$\lambda ^2 + \lambda$}である．
+
+	 \vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+	 \item  $X_1$と$X_2$が互いにポアソン分布$Pois(\lambda_1)$と$Pois(\lambda_2)$に従うとき，その$X_1$と$X_2$の和の確率変数$Y$のモーメント母関数は以下のように変形できる．
 	 
+	 \begin{equation}
+		\label{equ10}
+		\begin{split}
+		M_Y(t) = M_{X_1}(t)M_{X_2}(t) = e^{\lambda_1(e^t-1)}e^{\lambda_2(e^t-1)} = e^{(\lambda_1 + \lambda_2)(e^t-1)}
+		\end{split}
+	\end{equation}
+	
+よって，これはポアソン分布の表現に整理できているので，$Y$もポアソン分布に従っていて，その確率関数は
 
-		(b)次に$X$の平均と分散は以下の式\ref*{equ7}，式\ref*{equ8}，式\ref*{equ9}のように求められた．
+\begin{equation}
+	\label{equ11}
+	\begin{split}
+	p(y;\lambda_1 + \lambda_2) = \frac{(\lambda_1 + \lambda_2)^y e^{-(\lambda_1 + \lambda_2)}}{y!}
+	\end{split}
+\end{equation}
 
-		\begin{equation}
-			\label{equ7}
-			\begin{split}
-				E[X] &= \int_{0}^{1} xf(x) \,dx \\
-						 &= \int_{0}^{\frac{1}{2}} x(4x) \,dx + \int_{\frac{1}{2}}^{1} x(-4x+4) \,dx \\
-						 &= \frac{4}{3}[x^3]_{0}^{\frac{1}{2}}+ [-\frac{4}{3}x^3+2x^2]_{\frac{1}{2}}^{1} \\
-						 &= \frac{1}{6}+\frac{2}{3}-\frac{1}{3} \\
-						 &= \frac{1}{2}
-			\end{split}
-		\end{equation}
+と表されるので，\fbox{$p(y;\lambda_1 + \lambda_2) = \frac{(\lambda_1 + \lambda_2)^y e^{-(\lambda_1 + \lambda_2)}}{y!}$}.
+	\end{enumerate}
 
-		\begin{equation}
-			\label{equ8}
-			\begin{split}
-				E[X^2] &= \int_{0}^{1} x^2 f(x) \,dx \\
-							 &= \int_{0}^{\frac{1}{2}} x^2(4x) \,dx + \int_{\frac{1}{2}}^{1} x^2(-4x+4) \,dx \\
-							 &= [x^4]_{0}^{\frac{1}{2}} + [-x^4+\frac{4}{3}x^3]_{\frac{1}{2}}^{1} \\
-							 &= \frac{1}{16}+\frac{1}{3}-\frac{5}{48} \\
-							 &= \frac{7}{24} \\
-							\end{split}
-		\end{equation}
 
-		\begin{equation}
-			\label{equ9}
-				V[X] = E[X^2]- {E[X]}^2 = \frac{7}{24}-{\frac{1}{2}}^2 =\frac{1}{24} \\
-		\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-よって，平均は\fbox{$\frac{1}{2}$}，分散は\fbox{$\frac{1}{24}$}である．
+\section{宿題2-2}
+
+\begin{enumerate}
+	\setlength{\itemsep}{-2mm}
+	 
+	\item 正規分布の定義から，標本空間は $\Omega = \{\ \infty < x < x \}\ $,母数空間は$\{\mu|-\infty <\mu <\infty\}\ $,$\{\sigma^2|0 <\sigma^2 <\infty\}\ である．$
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\item 正規分布の平均値を求めるにあたって，最初に$E[X-\mu]$について考えていくと，
+
+\begin{equation}
+\label{equ12}
+\begin{split}
+E[X-\mu] &= \int_{-\infty}^{\infty} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx
+\end{split}
+\end{equation}
+
+ここで，以上の式の被積分関数は奇関数であり，$x=\mu$に関して対称な関数であるから，
+
+\begin{equation}
+	\label{equ13}
+	\begin{split}
+	\int_{-\infty}^{\mu} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx = -\int_{\mu}^{\infty} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx
+	\end{split}
+	\end{equation}
+
+のような関係が導ける．
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+これより，$E[X-\mu]$は，
+
+\begin{equation}
+	\label{equ14}
+	\begin{split}
+	E[X-\mu] &= \int_{-\infty}^{\infty} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx \\
+					 &= \int_{-\infty}^{\mu} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx + \int_{\mu}^{\infty} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx \\
+					 &= \int_{-\infty}^{\mu} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx - \int_{-\infty}^{\mu} (x-\mu) \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx \\
+					 &= 0
+	\end{split}
+	\end{equation}
+
+となる.よって,線形性から
+
+\begin{equation}
+	\label{equ15}
+	\begin{split}
+	E[X-\mu] = 0 \Longleftrightarrow E[X] = \mu
+	\end{split}
+	\end{equation}
+
+が得られ，求める平均値は\fbox{$\mu$}となる．
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\item 分散を求めるにあたり，置換積分を用いて解いていきたいので，$E[\frac{(X-\mu)^2}{\sigma^2}]$を考えると，
+
+\begin{equation}
+	\label{equ16}
+	\begin{split}
+	E[\frac{(X-\mu)^2}{\sigma^2}] &= \int_{-\infty}^{\infty} \frac{(x-\mu)^2}{\sigma^2} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx 
+	\end{split}
+	\end{equation}
+
+ここで，
+
+\begin{equation}
+	\label{equ17}
+	\begin{split}
+	y = \frac{(X-\mu)^2}{\sigma^2} \Longleftrightarrow x = \mu \pm \sigma\sqrt{2y} , dx = \left\lvert \frac{\sigma}{\sqrt{2y}} \right\rvert 
+	\end{split}
+	\end{equation}
+
+という変数変換と，
+
+\begin{equation}
+	\label{equ18}
+	\begin{split}
+	\int_{0}^{\infty} y^{\frac{3}{2}-1} e^{-y} \,dy = \Gamma\left( \frac{3}{2}\right) = \frac{1}{2}\Gamma\left( \frac{1}{2}\right) = \frac{\sqrt{\pi}}{2}
+	\end{split}
+	\end{equation}
+
+というガンマ関数の性質,そして被積分関数が偶関数であることから，
+
+\begin{equation}
+	\label{equ19}
+	\begin{split}
+	E[\frac{(X-\mu)^2}{\sigma^2}] &= \int_{-\infty}^{\infty} \frac{(x-\mu)^2}{\sigma^2} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left\{ -\frac{(x-\mu)^2}{2\sigma^2}\right\}  \,dx \\
+																&= 2\int_{0}^{\infty} 2y\frac{1}{\sqrt{2\pi\sigma^2}} exp(-y) \frac{\sigma}{\sqrt{2y}}  \,dy \\
+																&= 2\int_{0}^{\infty} \frac{\sqrt{y}}{\sqrt{\pi}} exp(-y) \,dy \\
+																&= 2\cdot\frac{1}{\sqrt{\pi}}\cdot\frac{\sqrt{\pi}}{2} \\
+																&= 1
+	\end{split}
+	\end{equation}
+
+したがって,分散は
+
+\begin{equation}
+	\label{equ20}
+	\begin{split}
+	V[X] = E[(X-\mu)^2] = \sigma^2
+	\end{split}
+	\end{equation}
+
+より，\fbox{$\sigma^2$}である.
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item 正規分布のモーメント母関数は以下のように求めた．
+
+\begin{equation}
+\label{equ21}
+\begin{split}
+M(t) &= E[e^{tX}] = \int_{-\infty}^{\infty} e^{tx} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu)^2}{2\sigma^2}\right)\ \,dx \\
+     &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu)^2}{2\sigma^2} + tx \right)\  \,dx \\
+		 &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{x^2 -2\mu x + \mu^2 - 2\sigma^2 xt}{2\sigma^2} \right)\  \,dx \\
+		 &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{x^2 -2(\mu+\sigma^2t)x + \mu^2}{2\sigma^2} \right)\  \,dx \\
+		 &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu-\sigma^2)^2 -2\mu\sigma^2t - \sigma^4t^2}{2\sigma^2}\right)\  \,dx \\
+		 &= exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)\ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}\right)\  \,dx
+		\end{split}
+\end{equation}
+
+ここで，$\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}\right)\  \,dx$とは，平均が$\mu+\sigma^2$で分散が$\sigma^2$の正規分布$N(\mu+\sigma^2, \sigma^2)$の全確率を表しているので，$\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}\right)\  \,dx = 1$であるから，
+
+\begin{equation}
+	\label{equ22}
+	\begin{split}
+	M(t) &= exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)\ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi\sigma^2}} exp\left(\ -\frac{(x-\mu-\sigma^2)^2}{2\sigma^2}\right)\  \,dx \\
+			 &= exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)\
+\end{split}
+	\end{equation}
+
+したがって，求めるモーメント母関数は\fbox{$exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)$}である．
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item  4で求めたモーメント母関数をtで一回微分したものに$t=0$を代入することによって$X$の期待値を得ることができる．まず$M(t)$を一回微分すると，以下のようになる．
+
+\begin{equation}
+\label{equ23}
+\begin{split}
+M'(t) = \left(\ \mu + \sigma^2t\right)\exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)\
+\end{split}
+\end{equation}
+
+よって，ここに$t=0$を代入すると，
+
+\begin{equation} 
+\label{equ24}
+\begin{split}
+E[X] = M'(0) =\left(\ \mu + \sigma^2\cdot 0\right)\exp\left(\ \mu \cdot 0+ \frac{\sigma^2}{2}\cdot 0^2\right)\ = \mu
+\end{split}
+\end{equation}
+
+のようになり，求める$X$の期待値$E[X]$は\fbox{$\mu$}である．
+
+次に，$X^2$の期待値は，$M'(t)$をさらに微分して，$t=0$を代入することによって得られる．まず微分をすると，
+
+\begin{equation}
+\label{equ25}
+\begin{split}
+M''(t) &= \sigma^2 \exp\left(\ \mu t+ \frac{\sigma^2}{2} t^2\right)\ + \left(\ \mu + \sigma^2t\right)^2 \exp\left(\ \mu t+ \frac{\sigma^2}{2}t^2\right)\ \\
+\end{split}
+\end{equation}
+
+よって，$t=0$を代入すると，$X^2$の期待値は，
+
+\begin{equation}
+\label{equ9}
+\begin{split}
+E[X^2] &= M''(0) = \sigma^2 \exp\left(\ \mu \cdot 0+ \frac{\sigma^2}{2} \cdot 0^2\right)\ + \left(\ \mu + \sigma^2\cdot 0\right)^2 \exp\left(\ \mu \cdot 0+ \frac{\sigma^2}{2}\cdot 0^2\right)\ \\
+			 &= \sigma^2 + \mu^2
+\end{split}
+\end{equation}
+
+のようになり，$X^2$の期待値は\fbox{$\sigma ^2 + \mu^2$}である．
+
+\vspace{6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\item  前問より正規分布$N(\mu,\sigma^2)$のモーメント母関数は$M(t) = exp\left(\ \mu t+ \frac{\sigma^2}{2} t^2\right)\ $であり， $X_1$と$X_2$が互いに独立に正規分布$N(\mu_1,\sigma_1^2)$と$N(\mu_2,\sigma_2^2)$に従うとき，その$X_1$と$X_2$の和の確率変数$Y$のモーメント母関数は以下のように変形できる．
+
+\begin{equation}
+\label{equ10}
+\begin{split}
+M_Y(t) &= M_{X_1}(t)M_{X_2}(t) \\
+			 &= exp\left(\ \mu_1 t+ \frac{\sigma_1^2}{2} t^2\right)\ exp\left(\ \mu_2 t+ \frac{\sigma_2^2}{2} t^2\right)\ \\
+			 &= exp\left(\ (\mu_1+\mu_2)t+ \frac{\sigma_1^2 + \sigma_2^2}{2} t^2\right)\
+\end{split}
+\end{equation}
+
+よって，これは平均が$\mu_1+\mu_2$で分散が$\sigma_1^2 + \sigma_2^2$の正規分布の表現に整理できているので，$Y$は正規分布$N(\mu_1+\mu_2,\sigma_1^2 + \sigma_2^2)$に従っていて，その確率密度関数は，
+
+\begin{equation}
+\label{equ11}
+\begin{split}
+f(y;\mu_1+\mu_2,\sigma_1^2 + \sigma_2^2) = \frac{1}{\sqrt{2\pi(\sigma_1^2 + \sigma_2^2)}} exp\left[\ -\frac{ \{\ x-(\mu_1+\mu_2) \}\ ^2}{2(\sigma_1^2 + \sigma_2^2)}\right]\
+\end{split}
+\end{equation}
+
+と表されるので,\fbox{$\frac{1}{\sqrt{2\pi(\sigma_1^2 + \sigma_2^2)}} exp\left[\ -\frac{ \{\ x-(\mu_1+\mu_2) \}\ ^2}{2(\sigma_1^2 + \sigma_2^2)}\right]\ $}.
 
 	\end{enumerate}
 	\vspace{3mm}
